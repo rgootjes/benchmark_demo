@@ -54,7 +54,7 @@ class _AddUsersPageState extends State<AddUsersPage> {
     print("build page");
     return Scaffold(
         appBar: AppBar(
-          title: const Text('CSV TO LIST'),
+          title: const Text('Benchmark Demo'),
         ),
         body: Center(
           child: SingleChildScrollView(
@@ -69,16 +69,12 @@ class _AddUsersPageState extends State<AddUsersPage> {
                     child: TextButton(
                       onPressed: _openFileExplorer,
                       child: const Text(
-                        "CSV To List",
+                        "Upload CSV",
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
                   ),
                 ),
-                Text(
-                    "records.length${(records.isNotEmpty) ? records.length.toString() : ' is empty for now'}"),
-                Text(
-                    "records.first.length${(records.isNotEmpty) ? records.length.toString() : ' is empty for now'}"),
                 SizedBox(
                   width: 1000,
                   // child: Expanded(
