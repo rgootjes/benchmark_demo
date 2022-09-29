@@ -4,14 +4,14 @@ import 'dart:convert';
 import 'package:csv/csv.dart';
 import 'package:file_picker/file_picker.dart';
 
-class AddUsersPage extends StatefulWidget {
-  const AddUsersPage({Key? key}) : super(key: key);
+class AddRecordsPage extends StatefulWidget {
+  const AddRecordsPage({Key? key}) : super(key: key);
 
   @override
-  _AddUsersPageState createState() => _AddUsersPageState();
+  _AddRecordsPageState createState() => _AddRecordsPageState();
 }
 
-class _AddUsersPageState extends State<AddUsersPage> {
+class _AddRecordsPageState extends State<AddRecordsPage> {
   late List<Record> records;
 
   Future _openFileExplorer() async {

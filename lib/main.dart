@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Benchmark Demo',
       theme: ThemeData(
         brightness: Brightness.light,
         primaryColor: Colors.grey.shade900,
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
             caption: TextStyle(
                 fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.grey.shade400)),
       ),
-      home: const AddUsersPage(),
+      home: const AddRecordsPage(),
     );
   }
 }
