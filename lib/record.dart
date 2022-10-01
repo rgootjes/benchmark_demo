@@ -23,7 +23,7 @@ Map<String, List<String>> accTypes = {
 Map<String, dynamic> codes = {};
 
 loadAccountTypes() async {
-  final String response = await rootBundle.loadString('data/categories.json');
+  final String response = await rootBundle.loadString('assets/data/categories.json');
   final Map<String, dynamic> data =
       Map<String, dynamic>.from(json.decode(response) as Map<String, dynamic>);
 
@@ -37,7 +37,7 @@ loadAccountTypes() async {
 }
 
 loadCodes() async {
-  final String response = await rootBundle.loadString('data/codes.json');
+  final String response = await rootBundle.loadString('assets/data/codes.json');
   final Map<String, dynamic> data =
       Map<String, dynamic>.from(json.decode(response) as Map<String, dynamic>);
 
