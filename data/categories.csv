@@ -1,0 +1,173 @@
+﻿Clasification,Narration
+Current Account,Current Account
+Current Account,Accounts Receivable
+Current Account,Cash on Hand
+Current Account,Feed on Hand
+Current Account,Consumables on Hand
+Current Account,Other Current Assets
+Current Account,Income Equalisation
+Current Account,Wool On Hand
+Current Account,Produce on hand
+Current Account,Sheep on hand - DRAFT
+Current Account,Sheep on Hand - Ewe hoggets
+Current Account,Sheep on Hand - Ram and wether hoggets
+Current Account,Sheep on Hand - Two-tooth ewes
+Current Account,Sheep on Hand - Mixed-age ewes (rising 3-year and 4-year old ewes)
+Current Account,Sheep on Hand - Rising five-year and older ewes
+Current Account,Sheep on Hand - Mixed-age wethers
+Current Account,Sheep on Hand - Breeding rams
+Current Account,Dairy Cattle on Hand - DRAFT
+Current Account,Dairy Cattle on Hand - Rising one-year heifers
+Current Account,Dairy Cattle on Hand - Rising two-year heifers
+Current Account,Dairy Cattle on Hand - Mixed-age cows
+Current Account,Dairy Cattle on Hand - Rising one-year steers and bulls
+Current Account,Dairy Cattle on Hand - Rising two-year steers and bulls
+Current Account,Dairy Cattle on Hand - Rising three-year and older steers and bulls
+Current Account,Dairy Cattle on Hand - Breeding bulls
+Current Account,Beef Cattle on Hand - DRAFT
+Current Account,Beef Cattle on Hand - Rising one-year heifers
+Current Account,Beef Cattle on Hand - Rising two-year heifers
+Current Account,Beef Cattle on Hand - Mixed-age cows
+Current Account,Beef Cattle on Hand - Rising one-year steers and bulls
+Current Account,Beef Cattle on Hand - Rising two-year steers and bulls
+Current Account,Beef Cattle on Hand - Rising three-year and older steers and bulls
+Current Account,Beef Cattle on Hand - Breeding bulls
+Current Account,Other Stock on Hand
+Current Liability,Accounts Payable
+Current Liability,Other Payables
+Current Liability,GST
+Current Liability,Tax Payable
+Equity,Equity Balances
+Expense,Sheep - Opening Stock P&L
+Expense,R1yr Heifers Purchases - Beef
+Expense,R2yr Heifers Purchases - Beef
+Expense,MA Cows Purchases - Beef
+Expense,Bobby Calf Purchases - Beef
+Expense,Breeding Bull Purchases - Beef
+Expense,R1yr Steers/Bulls Purchases - Beef
+Expense,R2yr Steers/Bulls Purchases - Beef
+Expense,R3yr Steers/Bulls Purchases - Beef
+Expense,Loyalty Payments Purchases - Beef
+Expense,Beef Purchases - Holding Gain
+Expense,Death and Missing Purchases - Beef
+Expense,Killed for own use Purchases - Beef
+Expense,Natural Increase - Beef
+Expense,R1yr Heifers Purchases - Dairy
+Expense,R2yr Heifers Purchases - Dairy
+Expense,MA Cows Purchases - Dairy
+Expense,Bobby Calf Purchases - Dairy
+Expense,Breeding Bull Purchases - Dairy
+Expense,R1yr Steers/Bulls Purchases - Dairy
+Expense,R2yr Steers/Bulls Purchases - Dairy
+Expense,R3yr Steers/Bulls Purchases - Dairy
+Expense,Loyalty Payments - Dairy
+Expense,Holding Gain - Dairy
+Expense,Death and Missing - Dairy
+Expense,Killed for own use - Dairy
+Expense,Natural Increase - Dairy
+Expense,Beef - Opening Livestock in P&L
+Expense,Dairy - Opening Livestock in P&L
+Expense,Deer - Opening Livestock in P&L
+Expense,Pig - Opening Livestock in P&L
+Expense,Goat - Opening Livestock in P&L
+Expense,Breeding Horses - Opening Livestock in P&L
+Expense,Wool - Opening in P&L
+Expense,Shearing Cost
+Expense,Staff Costs
+Expense,Animal Health
+Expense,Breeding & Herd Improvement
+Expense,Dairy Shed
+Expense,Electricity
+Expense,"Net feed made, purchased, cropped"
+Expense,Stock Grazing
+Expense,Support block lease
+Expense,Fertiliser
+Expense,Irrigation
+Expense,Regrassing
+Expense,Weed & Pest
+Expense,Vehicles & Fuel
+Expense,Repairs & Maintenance
+Expense,Freight & General
+Expense,Administration
+Expense,Insurance 
+Expense,ACC
+Expense,rates
+Expense,Owners Remunuation
+Expense,Deprciation
+Expense,Milking Platform Lease
+Expense,Feed Support Lease
+Expense,Interest - Bank
+Expense,Interest - Related Party
+Expense,Interest - Hire Purchase
+Expense,Current Years Tax
+Expense,Related Party Remunations
+Expense,Deprciation
+Expense,Amortization
+Expenses,Opening Produce on Hand
+Income,Milk sales - Advance Rate
+Income,Milk Sales - in Season Retros
+Income,Milk sales - Fixed Price
+Income,Milk Sales - Last Year Retros
+Income,A2 Premium
+Income,Organic Premium
+Income,Levies (Nets off against Milk)
+Income,Gain/Loss on Milk Futures
+Income,Demrits
+Income,Contract Milker
+Income,Sharemilker
+Income,Other Farm Income
+Income,Produce Sales
+Income,Skins/Slinks
+Income,Grazing
+Income,"Other Income (Interest, Rental, Dividends)"
+Income,Milk Dividends
+Income,Revaluation on PPE
+Income,Revaluation on Shares
+Income,Gain/Loss on Disposal of Asset
+Income,Closing Produce on Hand
+Income,Sheep Sales
+Income,Other Animal
+Income,Sheep - Closing Stock P&L
+Income,Wool Sale
+Income,R1yr Heifers Sales - Beef
+Income,R2yr Heifers Sales - Beef
+Income,MA Cows Sales - Beef
+Income,Bobby Calf Sales - Beef
+Income,Breeding Bull Sales - Beef
+Income,R1yr Steers/Bulls - Beef
+Income,R2yr Steers/Bulls - Beef
+Income,R3yr Steers/Bulls - Beef
+Income,Loyalty Payments - Beef
+Income,Beef - Holding Gain
+Income,Death and Missing - Beef
+Income,Killed for own use - Beef
+Income,R1yr Heifers Sales - Dairy
+Income,R2yr Heifers Sales - Dairy
+Income,MA Cows Sales - Dairy
+Income,Bobby Calf Sales - Dairy
+Income,Breeding Bull Sales - Dairy
+Income,R1yr Steers/Bulls - Dairy
+Income,R2yr Steers/Bulls - Dairy
+Income,R3yr Steers/Bulls - Dairy
+Income,Loyalty Payments - Dairy
+Income,Holding Gain - Dairy
+Income,Death and Missing - Dairy
+Income,Killed for own use - Dairy
+Income,Beef - Closing Livestock in P&L
+Income,Dairy - Closing Livestock in P&L
+Income,Deer - Closing Livestock in P&L
+Income,Pig - Closing Livestock in P&L
+Income,Goat - Closing Livestock in P&L
+Income,Breeding Horses - Closing Livestock in P&L
+Income,Wool - Closing in P&L
+Non Current Assets,"Milking Platform Land, Building & Improvements"
+Non Current Assets,"Run Off Land, Building & Improvements"
+Non Current Assets,Plant and Equipment
+Non Current Assets,Off Farm Property Investments
+Non Current Assets,Fonterra Shares
+Non Current Assets,Other Shares 
+Non Current Assets,Term Deposits
+Non Current Assets,Other Investments/Assets
+Non Current Liability,Hire Purchase
+Non Current Liability,Term Bank Debt
+Non Current Liability,Related Party Loan

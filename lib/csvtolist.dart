@@ -14,10 +14,33 @@ class AddRecordsPage extends StatefulWidget {
 class _AddRecordsPageState extends State<AddRecordsPage> {
   late List<Record> records;
 
+  assignFromCode(Record record) {
+    var subCodes = record.code.split('/');
+    var x = codes[subCodes[0]];
+    if (x != null) {
+      if (x["Classification"] != "Unknown" && x["Classification"] != "") {
+        record.accountType = x["Classification"];
+        if (accTypes[x["Classification"]]!.contains(x["Title"])) {
+          record.accountSubType = x["Title"];
+        } else if (subCodes.length > 1) {
+          var y = x["Sub Codes"][subCodes[1]];
+          if (y != null) {
+            if (accTypes[x["Classification"]]!.contains(y["Narration"])) {
+              record.accountSubType = y["Narration"];
+              record.status = "Unconfirmed";
+            }
+          }
+        }
+      }
+    }
+  }
+
   Future _openFileExplorer() async {
     FilePickerResult? result = await FilePicker.platform.pickFiles(
         allowMultiple: false, withData: true, type: FileType.custom, allowedExtensions: ['csv']);
     if (result != null) {
+      await loadAccountTypes();
+      await loadCodes();
       //decode bytes back to utf8
       final bytes = utf8.decode((result.files.first.bytes)!.toList());
       setState(() {
@@ -33,6 +56,7 @@ class _AddRecordsPageState extends State<AddRecordsPage> {
           } else {
             Record newRecord = Record(
                 record[0].toString(), record[1], record[2], record[4], record[10], record[11]);
+            assignFromCode(newRecord);
             records.add(newRecord);
           }
         }
@@ -76,7 +100,7 @@ class _AddRecordsPageState extends State<AddRecordsPage> {
                   ),
                 ),
                 SizedBox(
-                  width: 1000,
+                  width: 1400,
                   // child: Expanded(
                   child: ListView.builder(
                       shrinkWrap: true,
@@ -111,63 +135,71 @@ class _AddRecordsPageState extends State<AddRecordsPage> {
                                       ),
                                     ],
                                   ),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(horizontal: 18.0),
-                                        child: SizedBox(
-                                          width: 180,
-                                          child: DropdownButton(
-                                              value: records[index].accountType,
-                                              onChanged: (String? value) {
-                                                setState(() {
-                                                  records[index].accountType = value!;
-                                                  records[index].accountSubType =
-                                                      accountTypes[value]![0];
-                                                  records[index].status = "Unconfirmed";
-                                                });
-                                              },
-                                              items: accountTypes.keys.toList().map((String key) {
-                                                // print("KEY: $key");
-                                                return DropdownMenuItem<String>(
-                                                  value: key,
-                                                  child: Text(
-                                                    key,
-                                                    style: const TextStyle(fontSize: 14),
-                                                  ),
-                                                );
-                                              }).toList()),
+                                  SizedBox(
+                                    width: 1000,
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(horizontal: 18.0),
+                                          child: SizedBox(
+                                            width: 180,
+                                            child: DropdownButton(
+                                                style: TextStyle(
+                                                    fontWeight:
+                                                        records[index].accountType == "Select"
+                                                            ? FontWeight.w600
+                                                            : FontWeight.w300),
+                                                value: records[index].accountType,
+                                                onChanged: (String? value) {
+                                                  setState(() {
+                                                    records[index].accountType = value!;
+                                                    records[index].accountSubType =
+                                                        accTypes[value]![0];
+                                                    records[index].status = "Unconfirmed";
+                                                  });
+                                                },
+                                                items: accTypes.keys.toList().map((String key) {
+                                                  // print("KEY: $key");
+                                                  return DropdownMenuItem<String>(
+                                                    value: key,
+                                                    child: Text(
+                                                      key,
+                                                      style: const TextStyle(fontSize: 14),
+                                                    ),
+                                                  );
+                                                }).toList()),
+                                          ),
                                         ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(horizontal: 18.0),
-                                        child: SizedBox(
-                                          width: 300,
-                                          child: DropdownButton(
-                                              value: records[index].accountSubType,
-                                              onChanged: (String? value) {
-                                                setState(() {
-                                                  records[index].status = "Unconfirmed";
-                                                  records[index].accountSubType = value!;
-                                                });
-                                              },
-                                              items: accountTypes[records[index].accountType]!
-                                                  .map((String item) {
-                                                // print("Entry :$item");
-                                                return DropdownMenuItem<String>(
-                                                  value: item,
-                                                  child: Text(
-                                                    item,
-                                                    overflow: TextOverflow.ellipsis,
-                                                    style: const TextStyle(fontSize: 12),
-                                                  ),
-                                                );
-                                              }).toList()),
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(horizontal: 18.0),
+                                          child: SizedBox(
+                                            width: 500,
+                                            child: DropdownButton(
+                                                value: records[index].accountSubType,
+                                                onChanged: (String? value) {
+                                                  setState(() {
+                                                    records[index].status = "Unconfirmed";
+                                                    records[index].accountSubType = value!;
+                                                  });
+                                                },
+                                                items: accTypes[records[index].accountType]!
+                                                    .map((String item) {
+                                                  // print("Entry :$item");
+                                                  return DropdownMenuItem<String>(
+                                                    value: item,
+                                                    child: Text(
+                                                      item,
+                                                      overflow: TextOverflow.ellipsis,
+                                                      style: const TextStyle(fontSize: 12),
+                                                    ),
+                                                  );
+                                                }).toList()),
+                                          ),
                                         ),
-                                      ),
-                                      _status(records[index])
-                                    ],
+                                        _status(records[index])
+                                      ],
+                                    ),
                                   ),
                                 ],
                               )),
