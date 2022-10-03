@@ -14,25 +14,29 @@ class AddRecordsPage extends StatefulWidget {
 class _AddRecordsPageState extends State<AddRecordsPage> {
   late List<Record> records;
 
-  assignFromCode(Record record) {
-    var subCodes = record.code.split('/');
-    var x = codes[subCodes[0]];
-    if (x != null) {
-      if (x["Classification"] != "Unknown" && x["Classification"] != "") {
-        record.accountType = x["Classification"];
-        if (accTypes[x["Classification"]]!.contains(x["Title"])) {
-          record.accountSubType = x["Title"];
-        } else if (subCodes.length > 1) {
-          var y = x["Sub Codes"][subCodes[1]];
-          if (y != null) {
-            if (accTypes[x["Classification"]]!.contains(y["Narration"])) {
-              record.accountSubType = y["Narration"];
-              record.status = "Unconfirmed";
-            }
-          }
-        }
+  getFromCode(Record record, dynamic code) {
+    if (accTypes.containsKey(code["Classification"])) {
+      record.accountType = code["Classification"];
+      if (accTypes[code["Classification"]]!.contains(code["Narration"])) {
+        record.accountSubType = code["Narration"];
+        record.status = "Unconfirmed";
       }
     }
+  }
+
+  assignFromCode(Record record) {
+    var code = codes[record.code.padLeft(3, '0')];
+    if (code != null) {
+      getFromCode(record, code);
+    } else {
+      code = codes[record.code.split('/')[0].padLeft(3, '0')];
+      if (code != null) {
+        getFromCode(record, code);
+      }
+    }
+
+    print(
+        "Code: ${record.code}, Name: ${record.recordName} \n Type: ${record.accountType}, SubType: ${record.accountSubType}\n");
   }
 
   Future _openFileExplorer() async {
